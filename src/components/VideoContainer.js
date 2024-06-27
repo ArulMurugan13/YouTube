@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import VideoShower from './Shared/VideoShower'
 import { YOUTUBE_API } from './utils/constants';
+import { Link } from 'react-router-dom';
 
 function VideoContainer() {
     const [videoList , setVideoList] = useState([]);
@@ -20,11 +21,15 @@ function VideoContainer() {
 
 
   return (
-     <div className=" grid grid-cols-4 overflow-auto h-[100vh]  gap-4 ">
+     <div className=" flex flex-wrap overflow-y-auto w-screen h-[100vh]  mt-16 gap-4  no-scrollbar">
         {
             videoList.map((vid)=>{
                 
-                return <VideoShower key={vid.id} video={vid}/>
+                return (
+                  <Link to={"watch?v=" + vid.id} key={vid.id}>
+                    <VideoShower video={vid} />
+                  </Link>
+                );
             })
 
         }

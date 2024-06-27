@@ -2,13 +2,25 @@ import youtube from '../Images/youtube.png'
 import hamburger from "../Images/hamburger.png";
 import user from "../Images/user.png";
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from './utils/appSlice';
+
 
 
 const Header = () => {
+
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = ()=>{
+      dispatch(toggleMenu());
+  }
+
   return (
-    <div className="grid grid-flow-col h-14 p-3 items-center text-center shadow-lg fixed top-0 left-0 w-full z-[1000]">
+    <div className="grid grid-flow-col h-14 p-3 items-center text-center shadow-lg top-0 left-0 w-full z-[1000]">
       <div className=" col-span-1 gap-2 flex  text-center">
-        <img className="h-6" alt="logo" src={hamburger} />
+        <img 
+        onClick={()=>toggleMenuHandler()}
+        className="h-6" alt="logo" src={hamburger} />
 
         <img className="h-6 w-24" alt="logo" src={youtube} />
       </div>

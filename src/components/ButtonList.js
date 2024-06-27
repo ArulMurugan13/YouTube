@@ -1,32 +1,31 @@
-import React from 'react'
-import ButtonComponent from './Shared/ButtonComponent';
-
+import React from "react";
+import ButtonComponent from "./Shared/ButtonComponent";
 
 const ButtonList = () => {
-    const buttons = [
-      "All",
-      "Music",
-      "Gaming",
-      "Live",
-      "Recently Uploaded",
-      "Trending",
-      "JukeBox",
-      "Podcasts",
-      "Music",
-      "Gaming",
-      "Live",
-      "Recently Uploaded",
-      "Trending",
-      "JukeBox",
-      "Podcasts",
-    ];
+  const buttons = [
+    "All",
+    "Music",
+    "Gaming",
+    "Live",
+    "Recently Uploaded",
+    "Trending",
+    "JukeBox",
+    "Podcasts",
+    "Music",
+    "Gaming",
+    "Live",
+    "Recently Uploaded",
+    "Trending",
+    "JukeBox",
+    "Podcasts",
+  ];
   return (
-    <div className="flex gap-5  items-center p-4 overflow-auto no-scrollbar border border-b-gray-200">
+    <div className="md:container md:mx-auto mx-auto flex gap-5 items-center  p-4  mb-2 overflow-auto fixed no-scrollbar border border-b-gray-200">
       {buttons.map((btn) => {
         return <ButtonComponent name={btn} />;
       })}
     </div>
   );
-}
+};
 
-export default ButtonList
+export default ButtonList;

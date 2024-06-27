@@ -1,14 +1,15 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import MainContainer from './MainContainer'
+// import MainContainer from './MainContainer'
+import { Outlet } from 'react-router-dom'
 
 const Body = () => {
   return (
-    <div className=' flex w-full   mt-14 h-[calc(100vh-4rem)]  fixed gap-5 '>
-        <Sidebar/>
-        <MainContainer/>
+    <div className="container flex fixed ">
+      <Sidebar />
+      <Outlet />
     </div>
-  )
+  );
 }
 
 export default Body
