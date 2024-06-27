@@ -13,31 +13,21 @@ function VideoContainer() {
      const fetchData = async () => {
        const data = await fetch(YOUTUBE_API);
        const json = await data.json();
-
-       console.log(json);
-
        setVideoList(json?.items);
      };
 
 
   return (
-     <div className=" flex flex-wrap overflow-y-auto w-screen h-[100vh]  mt-16 gap-4  no-scrollbar">
-        {
-            videoList.map((vid)=>{
-                
-                return (
-                  <Link to={"watch?v=" + vid.id} key={vid.id}>
-                    <VideoShower video={vid} />
-                  </Link>
-                );
-            })
-
-        }
-
-
-       
-      </div>
-      )
+    <div className=" flex flex-wrap  gap-4 p-2 md:container md:mx-auto mx-auto ">
+      {videoList.map((vid) => {
+        return (
+          <Link to={"watch?v=" + vid.id} key={vid.id}>
+            <VideoShower video={vid} />
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
 
 export default VideoContainer

@@ -10,7 +10,7 @@ const VideoShower = ({video}) => {
         <img
           className="rounded-lg w-60 h-38"
           alt="thumbnail"
-          src={thumbnails?.maxres?.url}
+          src={thumbnails?.maxres?.url || thumbnails?.high?.url}
         />
       </div>
       <div>

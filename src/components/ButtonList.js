@@ -20,9 +20,9 @@ const ButtonList = () => {
     "Podcasts",
   ];
   return (
-    <div className="md:container md:mx-auto mx-auto flex gap-5 items-center  p-4  mb-2 overflow-auto fixed no-scrollbar border border-b-gray-200">
-      {buttons.map((btn) => {
-        return <ButtonComponent name={btn} />;
+    <div className="md:container md:mx-auto mx-auto flex gap-5 items-center  p-4  mb-2 overflow-auto  no-scrollbar border border-b-gray-200">
+      {buttons.map((btn,index) => {
+        return <ButtonComponent key={index} name={btn} />;
       })}
     </div>
   );
